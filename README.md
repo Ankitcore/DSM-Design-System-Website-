@@ -146,14 +146,16 @@ DSM enforces a curated, high-contrast flat color system:
 
 DSM features a restrained, high-performance generative motion background (`<MotionBackground />`) that visualizes the interconnected geometry of an evolving design system:
 
-- **Mathematical Coordinate Grid:** Subtly rendered 64px grid lines (`rgba(53, 53, 53, 0.22)`) grounding the interface.
-- **Node & Vector Constellation:** Deterministic points connected by thin mint lines (`rgba(67, 197, 139, 0.12)`) within proximity thresholds.
-- **Architectural Floating Primitives:** Slow-floating vector glyphs (+ crosshairs, quadrant arcs, dashed bounding boxes) rotating at fractional speeds.
-- **Atmospheric Ambient Light Fields:** Dual ultra-low opacity radial gradients (mint `#43C58B` and gold `#FFC94A`) breathing smoothly across the canvas.
-- **Damped Pointer Interaction:** Gentle node deflection when mouse approaches, smoothly springing back without sudden jitter.
+- **Interactive Cursor Spotlight & Grid Illumination:** Dynamic radial lighting follows cursor movement, highlighting nearby grid lines and revealing illuminated micro-crosshairs at grid vertices.
+- **Data Signal Pulses:** Glowing data packets travel along active vector graph edges between nodes, visualizing live component state and token propagation.
+- **Interactive Click Ripples (Shockwave Pings):** Clicking anywhere triggers an expanding architectural sonar ripple that gently deflects surrounding nodes.
+- **Radar Calibration Beam:** A slow, subtle horizontal scanning beam travels down the canvas, simulating a real-time CAD / UI layout calibration sweep.
+- **Architectural Floating Primitives & Token Chips:** Slow-drifting vector glyphs (+ crosshairs, circular quadrant arcs, bounding boxes, dimension lines, and design tokens like `4px`, `8px`, `#43C58B`).
+- **Atmospheric Harmonic Light Fields:** Dual ultra-low opacity radial gradients (mint `#43C58B` and gold `#FFC94A`) breathing smoothly across the canvas.
+- **Retina 2x HiDPI Resolution:** Automatically scales canvas to device pixel ratio (`dpr <= 2`) for razor-sharp vector lines on high-resolution displays.
 - **Performance & Accessibility First:**
   - Single-canvas rendering using native `requestAnimationFrame` with zero React re-renders.
-  - Automatically paused via `IntersectionObserver` / document visibility when the tab is inactive.
+  - Automatically paused via `visibilitychange` (`document.hidden`) when the tab is inactive.
   - Full `prefers-reduced-motion: reduce` compliance: replaces motion with a static architectural grid.
   - Completely non-intrusive: strict `pointer-events: none` and WCAG 2.2 AA contrast preservation.
 

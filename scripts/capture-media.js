@@ -30,7 +30,7 @@ async function capture() {
 
   // 1. Screenshot: Hero Section
   console.log("Capturing 1/6: Hero Section with Motion Background...");
-  await page.goto("http://localhost:3000", { waitUntil: "networkidle0" });
+  await page.goto("http://localhost:3000", { waitUntil: "domcontentloaded" });
   await page.waitForSelector("h1");
   await new Promise((r) => setTimeout(r, 800));
   await page.screenshot({
@@ -40,7 +40,7 @@ async function capture() {
 
   // 2. Screenshot: Component Playground
   console.log("Capturing 2/6: Component Playground...");
-  await page.goto("http://localhost:3000/components", { waitUntil: "networkidle0" });
+  await page.goto("http://localhost:3000/components", { waitUntil: "domcontentloaded" });
   await page.waitForSelector("#button");
   await page.screenshot({
     path: path.join(OUTPUT_DIR, "screenshot-components.png"),
@@ -49,7 +49,7 @@ async function capture() {
 
   // 3. Screenshot: Resource Discovery Directory
   console.log("Capturing 3/6: Resource Directory...");
-  await page.goto("http://localhost:3000/resources", { waitUntil: "networkidle0" });
+  await page.goto("http://localhost:3000/resources", { waitUntil: "domcontentloaded" });
   await page.waitForSelector("article");
   await page.screenshot({
     path: path.join(OUTPUT_DIR, "screenshot-resources.png"),
@@ -58,7 +58,7 @@ async function capture() {
 
   // 4. Screenshot: Design Foundations (Color Tokens Matrix)
   console.log("Capturing 4/6: Design Foundations...");
-  await page.goto("http://localhost:3000/#foundations", { waitUntil: "networkidle0" });
+  await page.goto("http://localhost:3000/#foundations", { waitUntil: "domcontentloaded" });
   await page.evaluate(() => {
     const el = document.getElementById("foundations");
     if (el) el.scrollIntoView();
@@ -71,7 +71,7 @@ async function capture() {
 
   // 5. Screenshot: Quick Guide & Shortcuts Modal
   console.log("Capturing 5/6: Shortcuts Modal...");
-  await page.goto("http://localhost:3000", { waitUntil: "networkidle0" });
+  await page.goto("http://localhost:3000", { waitUntil: "domcontentloaded" });
   // Click the How to use button in header
   await page.evaluate(() => {
     const btn = document.querySelector('button[aria-label*="Quick Guide"]');
@@ -85,7 +85,7 @@ async function capture() {
 
   // 6. Screenshot: User Manual & Platform Guide
   console.log("Capturing 6/6: User Guide Page...");
-  await page.goto("http://localhost:3000/guide", { waitUntil: "networkidle0" });
+  await page.goto("http://localhost:3000/guide", { waitUntil: "domcontentloaded" });
   await page.waitForSelector("h1");
   await page.screenshot({
     path: path.join(OUTPUT_DIR, "screenshot-guide.png"),
@@ -97,7 +97,7 @@ async function capture() {
   await page.setViewport({ width: 1200, height: 750, deviceScaleFactor: 1 });
 
   // Frame 1: Hero view
-  await page.goto("http://localhost:3000", { waitUntil: "networkidle0" });
+  await page.goto("http://localhost:3000", { waitUntil: "domcontentloaded" });
   await page.screenshot({ path: path.join(FRAMES_DIR, "frame_01.png") });
 
   // Frame 2: Hover over orb in hero
