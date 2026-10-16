@@ -29,9 +29,10 @@ async function capture() {
   const page = await browser.newPage();
 
   // 1. Screenshot: Hero Section
-  console.log("Capturing 1/6: Hero Section...");
+  console.log("Capturing 1/6: Hero Section with Motion Background...");
   await page.goto("http://localhost:3000", { waitUntil: "networkidle0" });
   await page.waitForSelector("h1");
+  await new Promise((r) => setTimeout(r, 800));
   await page.screenshot({
     path: path.join(OUTPUT_DIR, "screenshot-hero.png"),
     clip: { x: 0, y: 0, width: 1440, height: 860 },

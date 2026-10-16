@@ -5,7 +5,7 @@ import { siteConfig } from "@/config/site";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-[#141414] border-t border-[#353535] text-[#A7A7A1] mt-24">
+    <footer className="relative z-10 w-full bg-[#141414]/90 backdrop-blur-md border-t border-[#353535] text-[#A7A7A1] mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           {/* Brand Column */}

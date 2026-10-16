@@ -134,7 +134,24 @@ DSM enforces a curated, high-contrast flat color system:
 | **Golden Yellow** | `--dsm-yellow` | `#FFC94A` | Focal 3D orb, alert notices, priority badges | **11.1:1** | **WCAG AAA** |
 | **Soft Violet** | `--dsm-violet` | `#B899D8` | Editorial circular disc, spec badges | **7.9:1** | **WCAG AAA** |
 
-> **Strict Rule:** Purple gradients and decorative background blurs are prohibited. All depth is achieved through flat vector geometry, 1.2px coordinate grids, and mathematical lighting models.
+> **Strict Rule:** Purple gradients and neon washes are prohibited. All atmospheric depth is achieved through the generative **DSM Motion Field**, flat vector geometry, 1.2px coordinate grids, and mathematical lighting models.
+
+---
+
+## ✨ DSM Motion Field (Living Design System Background)
+
+DSM features a restrained, high-performance generative motion background (`<MotionBackground />`) that visualizes the interconnected geometry of an evolving design system:
+
+- **Mathematical Coordinate Grid:** Subtly rendered 64px grid lines (`rgba(53, 53, 53, 0.22)`) grounding the interface.
+- **Node & Vector Constellation:** Deterministic points connected by thin mint lines (`rgba(67, 197, 139, 0.12)`) within proximity thresholds.
+- **Architectural Floating Primitives:** Slow-floating vector glyphs (+ crosshairs, quadrant arcs, dashed bounding boxes) rotating at fractional speeds.
+- **Atmospheric Ambient Light Fields:** Dual ultra-low opacity radial gradients (mint `#43C58B` and gold `#FFC94A`) breathing smoothly across the canvas.
+- **Damped Pointer Interaction:** Gentle node deflection when mouse approaches, smoothly springing back without sudden jitter.
+- **Performance & Accessibility First:**
+  - Single-canvas rendering using native `requestAnimationFrame` with zero React re-renders.
+  - Automatically paused via `IntersectionObserver` / document visibility when the tab is inactive.
+  - Full `prefers-reduced-motion: reduce` compliance: replaces motion with a static architectural grid.
+  - Completely non-intrusive: strict `pointer-events: none` and WCAG 2.2 AA contrast preservation.
 
 ---
 
@@ -204,6 +221,7 @@ dsm/
 │   │   ├── foundations/         # DesignFoundations color & type matrix
 │   │   ├── hero/                # HeroSection & GeometricArtwork SVG
 │   │   ├── layout/              # Header, Footer, and mobile navigation drawer
+│   │   ├── motion/              # MotionBackground generative canvas motion field
 │   │   ├── showcase/            # ComponentShowcase live playground
 │   │   └── ui/                  # Primitives: Button, Input, Modal, Alert, Tabs, etc.
 │   ├── config/

@@ -4,6 +4,7 @@ import "./globals.css";
 import { ToastProvider } from "@/components/ui/ToastContext";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { MotionBackground } from "@/components/motion/MotionBackground";
 import { siteConfig } from "@/config/site";
 
 const geistSans = Geist({
@@ -85,8 +86,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#171717] text-[#F5F5F2] flex flex-col min-h-screen selection:bg-[#43C58B] selection:text-[#171717]`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#171717] text-[#F5F5F2] flex flex-col min-h-screen selection:bg-[#43C58B] selection:text-[#171717] relative`}
       >
+        {/* Living Design System Background Animation */}
+        <MotionBackground />
+
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-[#43C58B] text-[#171717] font-semibold text-xs font-mono uppercase"
@@ -95,7 +99,7 @@ export default function RootLayout({
         </a>
         <ToastProvider>
           <Header />
-          <main id="main-content" className="flex-1">
+          <main id="main-content" className="relative z-10 flex-1">
             {children}
           </main>
           <Footer />
