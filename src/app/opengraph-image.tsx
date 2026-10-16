@@ -26,47 +26,16 @@ export default async function Image() {
       >
         <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
           {/* Logo emblem */}
-          <div
-            style={{
-              width: "48px",
-              height: "48px",
-              position: "relative",
-              display: "flex",
-            }}
+          <svg
+            width="52"
+            height="52"
+            viewBox="0 0 100 100"
+            fill="none"
           >
-            <div
-              style={{
-                position: "absolute",
-                left: 0,
-                top: 0,
-                width: "24px",
-                height: "24px",
-                backgroundColor: "#43C58B",
-                borderTopLeftRadius: "24px",
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                right: 0,
-                bottom: 0,
-                width: "24px",
-                height: "24px",
-                backgroundColor: "#FF8045",
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                right: "4px",
-                top: "4px",
-                width: "14px",
-                height: "14px",
-                borderRadius: "50%",
-                backgroundColor: "#FFC94A",
-              }}
-            />
-          </div>
+            <path d="M 2 1 A 41 41 0 0 1 2 83 V 1 Z" fill="#4BD1A0" />
+            <circle cx="73" cy="38.5" r="24" fill="#FDC527" />
+            <path d="M 49 53 L 91 99 H 7 A 50 50 0 0 1 49 53 Z" fill="#FD702D" />
+          </svg>
           <span
             style={{
               fontSize: "36px",

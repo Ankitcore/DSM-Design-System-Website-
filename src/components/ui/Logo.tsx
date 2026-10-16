@@ -20,42 +20,37 @@ export const Logo: React.FC<LogoProps> = ({
   const textColor = isLight ? "#171717" : "#F5F5F2";
 
   const sizeConfig = {
-    sm: { iconSize: 20, fontSize: "text-lg", dotSize: 4, gap: "gap-2" },
-    md: { iconSize: 26, fontSize: "text-xl", dotSize: 5, gap: "gap-2.5" },
-    lg: { iconSize: 34, fontSize: "text-2xl", dotSize: 6, gap: "gap-3" },
+    sm: { iconSize: 22, fontSize: "text-lg", dotSize: 4, gap: "gap-2" },
+    md: { iconSize: 28, fontSize: "text-xl", dotSize: 5, gap: "gap-2.5" },
+    lg: { iconSize: 36, fontSize: "text-2xl", dotSize: 6, gap: "gap-3" },
   }[size];
 
   const iconSvg = (
     <svg
       width={sizeConfig.iconSize}
       height={sizeConfig.iconSize}
-      viewBox="0 0 32 32"
+      viewBox="0 0 100 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="shrink-0"
       aria-hidden="true"
     >
-      {/* Precision geometric DSM mark: mint semicircle quadrant + orange triangle + yellow focal dot */}
+      {/* Mint Green Semicircle */}
       <path
-        d="M2 16C2 8.26801 8.26801 2 16 2V16H2Z"
-        fill="#43C58B"
+        d="M 2 1 A 41 41 0 0 1 2 83 V 1 Z"
+        fill="#4BD1A0"
       />
-      <path
-        d="M16 16H30L16 30V16Z"
-        fill="#FF8045"
-      />
+      {/* Golden Yellow Circle */}
       <circle
-        cx="23"
-        cy="9"
-        r="5"
-        fill="#FFC94A"
+        cx="73"
+        cy="38.5"
+        r="24"
+        fill="#FDC527"
       />
-      <rect
-        x="5"
-        y="21"
-        width="6"
-        height="6"
-        fill="#B899D8"
+      {/* Warm Orange Concave Triangle */}
+      <path
+        d="M 49 53 L 91 99 H 7 A 50 50 0 0 1 49 53 Z"
+        fill="#FD702D"
       />
     </svg>
   );
@@ -74,7 +69,7 @@ export const Logo: React.FC<LogoProps> = ({
             style={{
               width: sizeConfig.dotSize,
               height: sizeConfig.dotSize,
-              backgroundColor: "#FF8045",
+              backgroundColor: "#FD702D",
             }}
           />
         </span>
@@ -87,7 +82,7 @@ export const Logo: React.FC<LogoProps> = ({
       <Link
         href="/"
         aria-label="DSM - Design System for Modern Products Homepage"
-        className="group inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#43C58B] focus-visible:ring-offset-2 focus-visible:ring-offset-[#171717] rounded-sm transition-opacity hover:opacity-90"
+        className="group inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4BD1A0] focus-visible:ring-offset-2 focus-visible:ring-offset-[#171717] rounded-sm transition-opacity hover:opacity-90"
       >
         {content}
       </Link>

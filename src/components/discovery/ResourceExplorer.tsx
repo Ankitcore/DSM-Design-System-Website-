@@ -237,10 +237,10 @@ export const ResourceExplorer: React.FC<ResourceExplorerProps> = ({
                     <div className="flex items-center gap-3">
                       {/* Geometric emblem matching screenshot */}
                       <div className="w-8 h-8 shrink-0 flex items-center justify-center bg-[#252525] border border-[#353535]">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                          <path d="M2 10C2 5.58 5.58 2 10 2V10H2Z" fill="#43C58B" />
-                          <path d="M10 10H18L10 18V10Z" fill="#FF8045" />
-                          <circle cx="14" cy="6" r="3" fill="#FFC94A" />
+                        <svg width="20" height="20" viewBox="0 0 100 100" fill="none">
+                          <path d="M 2 1 A 41 41 0 0 1 2 83 V 1 Z" fill="#4BD1A0" />
+                          <circle cx="73" cy="38.5" r="24" fill="#FDC527" />
+                          <path d="M 49 53 L 91 99 H 7 A 50 50 0 0 1 49 53 Z" fill="#FD702D" />
                         </svg>
                       </div>
                       <div>

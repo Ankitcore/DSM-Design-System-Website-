@@ -8,10 +8,10 @@ export default function NotFound() {
       <div className="max-w-xl w-full p-8 md:p-12 bg-[#1B1B1B] border border-[#353535] text-center flex flex-col items-center">
         {/* Subtle geometric emblem */}
         <div className="w-16 h-16 bg-[#242424] border border-[#353535] flex items-center justify-center mb-6">
-          <svg width="36" height="36" viewBox="0 0 32 32" fill="none">
-            <path d="M2 16C2 8.26801 8.26801 2 16 2V16H2Z" fill="#43C58B" />
-            <path d="M16 16H30L16 30V16Z" fill="#FF8045" />
-            <circle cx="23" cy="9" r="5" fill="#FFC94A" />
+          <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
+            <path d="M 2 1 A 41 41 0 0 1 2 83 V 1 Z" fill="#4BD1A0" />
+            <circle cx="73" cy="38.5" r="24" fill="#FDC527" />
+            <path d="M 49 53 L 91 99 H 7 A 50 50 0 0 1 49 53 Z" fill="#FD702D" />
           </svg>
         </div>
 
