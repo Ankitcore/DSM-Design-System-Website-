@@ -1,5 +1,9 @@
 <div align="center">
 
+<img src="./public/media/dsm-banner.png" alt="DSM - Design System for Modern Products" width="100%" style="border-radius: 8px; border: 1px solid #353535; max-width: 960px;" />
+
+<br/><br/>
+
 # DSM.
 ### Design System for Modern Products
 
@@ -192,6 +196,7 @@ dsm/
 │   ├── favicon.svg              # Scalable vector brand favicon
 │   ├── site.webmanifest         # PWA web manifest
 │   └── media/
+│       ├── dsm-banner.png       # Official DSM brand identity banner
 │       ├── dsm-demo.gif         # High-quality recorded platform walkthrough GIF
 │       ├── screenshot-hero.png
 │       ├── screenshot-components.png
