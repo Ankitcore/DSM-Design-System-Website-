@@ -1,6 +1,10 @@
 <div align="center">
 
-<img src="./public/media/dsm-banner.png" alt="DSM - Design System for Modern Products" width="100%" style="border-radius: 8px; border: 1px solid #353535; max-width: 960px;" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./public/media/dsm-banner-transparent.png" />
+  <source media="(prefers-color-scheme: light)" srcset="./public/media/dsm-banner.png" />
+  <img src="./public/media/dsm-banner-transparent.png" alt="DSM - Design System for Modern Products" width="100%" style="max-width: 960px;" />
+</picture>
 
 <br/><br/>
 
@@ -198,8 +202,9 @@ dsm/
 │   ├── favicon.svg              # Scalable vector brand favicon
 │   ├── site.webmanifest         # PWA web manifest
 │   └── media/
-│       ├── dsm-banner.png       # Official DSM brand identity banner
-│       ├── dsm-demo.gif         # High-quality recorded platform walkthrough GIF
+│       ├── dsm-banner.png               # Official DSM brand banner (#171717 canvas)
+│       ├── dsm-banner-transparent.png   # Transparent vector banner for dark mode
+│       ├── dsm-demo.gif                 # High-quality recorded platform walkthrough GIF
 │       ├── screenshot-hero.png
 │       ├── screenshot-components.png
 │       ├── screenshot-resources.png
