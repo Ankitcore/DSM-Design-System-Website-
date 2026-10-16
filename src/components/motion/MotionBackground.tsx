@@ -16,6 +16,15 @@ interface NodeItem {
   hasRing: boolean;
 }
 
+interface SignalPacket {
+  fromNode: number;
+  toNode: number;
+  progress: number; // 0 to 1
+  speed: number;
+  color: string;
+  size: number;
+}
+
 interface ClickRipple {
   x: number;
   y: number;
@@ -145,6 +154,7 @@ export const MotionBackground: React.FC = () => {
 
     let nodes: NodeItem[] = [];
     let glyphs: GeometricGlyph[] = [];
+    let packets: SignalPacket[] = [];
     const activePairs: [number, number][] = [];
 
     const tokenLabels = ["4px", "8px", "16px", "24px", "#43C58B", "tokens", "scale", "grid"];
@@ -197,6 +207,8 @@ export const MotionBackground: React.FC = () => {
           label: tokenLabels[i % tokenLabels.length],
         });
       }
+
+      packets = [];
     };
 
     initElements();
@@ -399,7 +411,50 @@ export const MotionBackground: React.FC = () => {
         }
       }
 
-      // 8. NODES WITH ORGANIC PULSE & DAMPED MOUSE REPULSION
+      // 8. DATA SIGNAL PACKETS TRAVELING ALONG GRAPH EDGES
+      // Spawn new packet occasionally if capacity allows
+      if (packets.length < 8 && activePairs.length > 0 && Math.random() < 0.05) {
+        const randomPair = activePairs[Math.floor(Math.random() * activePairs.length)];
+        packets.push({
+          fromNode: randomPair[0],
+          toNode: randomPair[1],
+          progress: 0,
+          speed: 0.012 + Math.random() * 0.018,
+          color: Math.random() > 0.3 ? "67, 197, 139" : "255, 201, 74",
+          size: 1.5 + Math.random() * 1.5,
+        });
+      }
+
+      // Render and update packets
+      for (let i = packets.length - 1; i >= 0; i--) {
+        const pkt = packets[i];
+        pkt.progress += pkt.speed;
+
+        if (pkt.progress >= 1 || !nodes[pkt.fromNode] || !nodes[pkt.toNode]) {
+          packets.splice(i, 1);
+          continue;
+        }
+
+        const n1 = nodes[pkt.fromNode];
+        const n2 = nodes[pkt.toNode];
+        const px = n1.x + (n2.x - n1.x) * pkt.progress;
+        const py = n1.y + (n2.y - n1.y) * pkt.progress;
+
+        // Glowing packet head
+        const pktAlpha = Math.sin(pkt.progress * Math.PI) * 0.85;
+        ctx.fillStyle = `rgba(${pkt.color}, ${pktAlpha})`;
+        ctx.beginPath();
+        ctx.arc(px, py, pkt.size, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Tracer glow
+        ctx.fillStyle = `rgba(${pkt.color}, ${pktAlpha * 0.25})`;
+        ctx.beginPath();
+        ctx.arc(px, py, pkt.size * 2.5, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // 9. NODES WITH ORGANIC PULSE & DAMPED MOUSE REPULSION
       for (let i = 0; i < nodes.length; i++) {
         const node = nodes[i];
 
@@ -458,7 +513,7 @@ export const MotionBackground: React.FC = () => {
         }
       }
 
-      // 9. FLOATING DESIGN SYSTEM GLYPHS & TOKEN CHIPS
+      // 10. FLOATING DESIGN SYSTEM GLYPHS & TOKEN CHIPS
       for (let i = 0; i < glyphs.length; i++) {
         const glyph = glyphs[i];
 

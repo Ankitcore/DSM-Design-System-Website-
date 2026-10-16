@@ -147,6 +147,7 @@ DSM enforces a curated, high-contrast flat color system:
 DSM features a restrained, high-performance generative motion background (`<MotionBackground />`) that visualizes the interconnected geometry of an evolving design system:
 
 - **Interactive Cursor Spotlight & Grid Illumination:** Dynamic radial lighting follows cursor movement, highlighting nearby grid lines and revealing illuminated micro-crosshairs at grid vertices.
+- **Data Signal Pulses:** Glowing data packets travel along active vector graph edges between nodes, visualizing live component state and token propagation.
 - **Interactive Click Ripples (Shockwave Pings):** Clicking anywhere triggers an expanding architectural sonar ripple that gently deflects surrounding nodes.
 - **Radar Calibration Beam:** A slow, subtle horizontal scanning beam travels down the canvas, simulating a real-time CAD / UI layout calibration sweep.
 - **Architectural Floating Primitives & Token Chips:** Slow-drifting vector glyphs (+ crosshairs, circular quadrant arcs, bounding boxes, dimension lines, and design tokens like `4px`, `8px`, `#43C58B`).
