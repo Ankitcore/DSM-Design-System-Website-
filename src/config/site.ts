@@ -32,6 +32,11 @@ export const siteConfig = {
       description: "Guides, design foundations, and implementation specs",
     },
     {
+      title: "How to Use",
+      href: "/guide",
+      description: "Guide on what DSM is, how to use it, and shortcuts",
+    },
+    {
       title: "About",
       href: "/about",
       description: "Brand principles, architecture, and design rationale",
@@ -42,6 +47,7 @@ export const siteConfig = {
       { title: "Components", href: "/components" },
       { title: "Resources", href: "/resources" },
       { title: "Documentation", href: "/docs" },
+      { title: "How to Use & Shortcuts", href: "/guide" },
       { title: "Design Foundations", href: "/#foundations" },
     ],
     company: [
