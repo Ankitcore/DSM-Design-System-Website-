@@ -23,11 +23,67 @@ A thoughtfully crafted design system and UI resource platform engineered for des
 
 ---
 
-## 📸 Visual Showcase
+## 🎬 Interactive Walkthrough (Video Preview)
 
 <div align="center">
-  <img src="./public/media/dsm-preview.png" alt="DSM Hero and Resource Discovery Interface" width="100%" style="border: 1px solid #353535; max-width: 900px;" />
-  <p><em>Asymmetric editorial hero, precision vector geometry with coordinate nodes, and live resource discovery explorer.</em></p>
+  <img src="./public/media/dsm-demo.gif" alt="DSM Platform Interactive Walkthrough GIF" width="100%" style="border: 1px solid #353535; max-width: 960px;" />
+  <p><em>Real-time recording showing vector geometry interactions, resource directory filtering, component playground state toggling, and the global keyboard shortcut navigator.</em></p>
+</div>
+
+---
+
+## 📸 Feature Screenshot Gallery
+
+### 1. Asymmetric Editorial Hero & Geometric Artwork
+> Deep `#171717` canvas pairing high-character editorial typography with custom SVG vector geometry, coordinate grid lines, interactive intersection vertices, and a 3D-shaded golden yellow sphere.
+
+<div align="center">
+  <img src="./public/media/screenshot-hero.png" alt="DSM Hero Section Screenshot" width="100%" style="border: 1px solid #353535; max-width: 960px;" />
+</div>
+
+---
+
+### 2. Searchable Resource Discovery Directory
+> Multi-attribute instant search, category dropdown filter, topic tags, sorting controls, and one-click specification citation copying.
+
+<div align="center">
+  <img src="./public/media/screenshot-resources.png" alt="DSM Resource Directory Screenshot" width="100%" style="border: 1px solid #353535; max-width: 960px;" />
+</div>
+
+---
+
+### 3. Interactive Component Playground & Prop Tables
+> Test UI primitives live on-screen (buttons, form inputs with live validation, switches, checkboxes, accessible modals, tabs, alerts). Inspect strict TypeScript prop contracts and copy code with toast confirmation.
+
+<div align="center">
+  <img src="./public/media/screenshot-components.png" alt="DSM Component Playground Screenshot" width="100%" style="border: 1px solid #353535; max-width: 960px;" />
+</div>
+
+---
+
+### 4. Atomic Design Foundations & Contrast Matrix
+> Mathematically audited design tokens: color variables with WCAG 2.2 AA and AAA contrast ratings, modular 4px spacing scale, and editorial typography scale.
+
+<div align="center">
+  <img src="./public/media/screenshot-foundations.png" alt="DSM Design Foundations Screenshot" width="100%" style="border: 1px solid #353535; max-width: 960px;" />
+</div>
+
+---
+
+### 5. Global Keyboard Shortcuts & Cheatsheet Modal
+> Accessible from anywhere on the platform by pressing <kbd>?</kbd> or clicking **"How to use"** in the top navigation bar.
+
+<div align="center">
+  <img src="./public/media/screenshot-modal.png" alt="DSM Shortcuts Modal Screenshot" width="100%" style="border: 1px solid #353535; max-width: 960px;" />
+</div>
+
+---
+
+### 6. User Manual & Platform Guide (`/guide`)
+> Dedicated step-by-step onboarding walkthrough explaining what DSM is, how to explore its primitives, and how to integrate tokens into production codebases.
+
+<div align="center">
+  <img src="./public/media/screenshot-guide.png" alt="DSM Guide Page Screenshot" width="100%" style="border: 1px solid #353535; max-width: 960px;" />
 </div>
 
 ---
@@ -37,13 +93,8 @@ A thoughtfully crafted design system and UI resource platform engineered for des
 - [What is DSM?](#-what-is-dsm)
 - [Design Language & Brand Palette](#-design-language--brand-palette)
 - [Key Features](#-key-features)
-  - [1. Asymmetric Editorial Hero & Geometric Artwork](#1-asymmetric-editorial-hero--geometric-artwork)
-  - [2. Searchable Resource Discovery Explorer](#2-searchable-resource-discovery-explorer)
-  - [3. Interactive Component Playground](#3-interactive-component-playground)
-  - [4. Atomic Design Foundations & Token Matrix](#4-atomic-design-foundations--token-matrix)
-  - [5. User Manual & Platform Guide](#5-user-manual--platform-guide)
-  - [6. Global Keyboard Shortcuts & Cheatsheet](#6-global-keyboard-shortcuts--cheatsheet)
 - [Accessibility Architecture (WCAG 2.2 AA)](#-accessibility-architecture-wcag-22-aa)
+- [Global Keyboard Shortcuts](#-global-keyboard-shortcuts)
 - [Project Architecture & Directory Structure](#-project-architecture--directory-structure)
 - [Getting Started & Local Installation](#-getting-started--local-installation)
 - [Integration Blueprint (React + Tailwind)](#-integration-blueprint-react--tailwind)
@@ -87,45 +138,9 @@ DSM enforces a curated, high-contrast flat color system:
 
 ---
 
-## 🚀 Key Features
+## ⌨️ Global Keyboard Shortcuts
 
-### 1. Asymmetric Editorial Hero & Geometric Artwork
-- Recreates the reference artwork using precision vector SVG paths.
-- **Mint Green Semicircle:** Curving from axis $x=280$ with a 1.2px white coordinate grid and interactive node vertices that respond on hover.
-- **Golden Yellow 3D Sphere:** Hoverable focal orb featuring spherical radial lighting, specular highlight, and a soft cast drop shadow.
-- **Soft Violet Editorial Disc:** Features an architectural curved smile arc and speech bubble badge containing a warm orange heart icon.
-- **Bottom Chevron Valley:** Warm orange and golden yellow triangles framing a central white keyhole/downward arrow glyph (`⚲` / `↓`).
-
-### 2. Searchable Resource Discovery Explorer
-- **Live Search Input:** Instant multi-attribute keyword matching with one-click clear button (`✕`).
-- **Category Dropdown:** Filter by `Foundations`, `Component Specs`, `Design Tokens`, `Layout Templates`, `Iconography`, `Accessibility Guides`, and `Starter Kits`.
-- **Topic Filter Chips:** Fast tag filtering (`Tokens`, `Components`, `Accessibility`, `Grid & Layout`, `Icons`, `Implementation`).
-- **Sorting Engine:** Sort by *Recently Updated*, *Name (A-Z)*, or *Category*.
-- **One-Click Spec Citation:** Copies structured specification citations directly to the clipboard with real toast feedback.
-
-### 3. Interactive Component Playground
-Available on both the homepage and the dedicated [`/components`](file:///C:/Users/PAXXON/.gemini/antigravity/scratch/dsm/src/app/components/page.tsx) page:
-- **Button Primitives:** Variants (`primary`, `mint`, `secondary`, `outline`, `ghost`), sizes (`sm`, `md`, `lg`), interactive loading spinner, and disabled states.
-- **Form Inputs:** Text fields with leading icons, helper copy, and live email validation demonstrating the `aria-invalid` error state.
-- **Select Menus:** Custom styled caret with full native mobile screen reader parity.
-- **Toggle Switches:** Accessible `role="switch"` binary controls with animated sliding thumbs and spacebar activation.
-- **Checkboxes:** Custom SVG checkmark boxes with keyboard focus loops.
-- **Accessible Dialogs (Modals):** Focus-trapping modal overlays with backdrop click dismissal, body scroll lock, and `Escape` key listeners.
-- **Alert Banners:** Contextual feedback banners (`info`, `success`, `warning`, `error`) with dismiss triggers.
-- **Badges & Microcopy:** Tag pills with status indicator dots.
-- **Segmented & Line Tabs:** WAI-ARIA tab controls with keyboard arrow navigation.
-
-### 4. Atomic Design Foundations & Token Matrix
-- **Interactive Color Swatches:** Click any swatch to copy its hexadecimal code or CSS variable name with toast confirmation.
-- **Modular Typography Scale:** Demonstrates display headline, H1, H2, H3, body large, body regular, small, and mono scales.
-- **4px Spatial Scale:** Visualized modular spacing increments from `space-1` (4px) to `space-24` (96px).
-- **Border & Radius Scale:** Sharp `radius-none` (0px) to smooth `radius-full` (9999px).
-
-### 5. User Manual & Platform Guide
-- Dedicated [`/guide`](file:///C:/Users/PAXXON/.gemini/antigravity/scratch/dsm/src/app/guide/page.tsx) page providing an in-depth walkthrough of the system's architecture, design philosophy, and step-by-step implementation recipes.
-
-### 6. Global Keyboard Shortcuts & Cheatsheet
-Press <kbd>?</kbd> or <kbd>Ctrl</kbd> + <kbd>K</kbd> anywhere on the site to trigger the global **Quick Guide & Shortcut Modal**:
+DSM is built for keyboard-first navigation:
 
 ```
  ┌────────────────────────────────────────────────────────┐
@@ -160,7 +175,13 @@ dsm/
 │   ├── favicon.svg              # Scalable vector brand favicon
 │   ├── site.webmanifest         # PWA web manifest
 │   └── media/
-│       └── dsm-preview.png      # High-resolution hero reference screenshot
+│       ├── dsm-demo.gif         # High-quality recorded platform walkthrough GIF
+│       ├── screenshot-hero.png
+│       ├── screenshot-components.png
+│       ├── screenshot-resources.png
+│       ├── screenshot-foundations.png
+│       ├── screenshot-modal.png
+│       └── screenshot-guide.png
 ├── src/
 │   ├── app/
 │   │   ├── layout.tsx           # Root layout with ToastProvider, Header, Footer & SEO
