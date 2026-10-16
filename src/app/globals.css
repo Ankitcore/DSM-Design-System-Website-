@@ -1,26 +1,91 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --dsm-bg: #171717;
+  --dsm-bg-secondary: #202020;
+  --dsm-bg-card: #242424;
+  --dsm-bg-card-hover: #2c2c2c;
+  --dsm-text: #F5F5F2;
+  --dsm-text-muted: #A7A7A1;
+  --dsm-text-subtle: #73736E;
+  --dsm-mint: #43C58B;
+  --dsm-mint-hover: #37b17a;
+  --dsm-orange: #FF8045;
+  --dsm-orange-hover: #f07034;
+  --dsm-yellow: #FFC94A;
+  --dsm-border: #353535;
+  --dsm-border-subtle: #282828;
+  --dsm-border-active: #4d4d4d;
+  --dsm-violet: #B899D8;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --color-dsm-bg: #171717;
+  --color-dsm-bg-secondary: #202020;
+  --color-dsm-bg-card: #242424;
+  --color-dsm-bg-card-hover: #2c2c2c;
+  --color-dsm-text: #F5F5F2;
+  --color-dsm-text-muted: #A7A7A1;
+  --color-dsm-text-subtle: #73736E;
+  --color-dsm-mint: #43C58B;
+  --color-dsm-mint-hover: #37b17a;
+  --color-dsm-orange: #FF8045;
+  --color-dsm-orange-hover: #f07034;
+  --color-dsm-yellow: #FFC94A;
+  --color-dsm-border: #353535;
+  --color-dsm-border-subtle: #282828;
+  --color-dsm-border-active: #4d4d4d;
+  --color-dsm-violet: #B899D8;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  background-color: #171717;
+  color: #F5F5F2;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #171717;
+  color: #F5F5F2;
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar for dark aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #171717;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #353535;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4a4a4a;
+}
+
+/* Focus styles for WCAG 2.2 AA accessibility */
+*:focus-visible {
+  outline: 2px solid #43C58B;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

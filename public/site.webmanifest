@@ -1,0 +1,14 @@
+{
+  "name": "DSM - Design System for Modern Products",
+  "short_name": "DSM",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#171717",
+  "background_color": "#171717",
+  "display": "standalone"
+}
